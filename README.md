@@ -25,16 +25,17 @@ password in pgadmin.
 ## API Info:
 
 The API is located with the vagrant folder. To access open vagrant box as per instructions above.
+
     ## open virtual environment
     $ source activate cvdjango
 
-    $ cd emergency_response_api/emergency_data
+    $ cd proj/emergency_response_api/emergency_data
     ## confirm all migrations are up to date
     $ python manage.py makemigrations
     $ python manage.py migrate
 
     ## create admin superuser
-    $ python manage.py createsuper
+    $ python manage.py createsuperuser
     ## follow prompts to create username, password, email can be blank
 
     ## run django app
