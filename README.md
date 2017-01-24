@@ -22,6 +22,10 @@ password: fire
 _BUT_ I set it up so you don't have to enter the password, just hit 'ok' if you are asked for a
 password in pgadmin.
 
+## Port Forwrding:
+
+Port 4545 on guest machine has been forwarded to 4546 on host.
+
 ## API Info:
 
 The API is located with the vagrant folder. To access open vagrant box as per instructions above.
@@ -38,34 +42,33 @@ The API is located with the vagrant folder. To access open vagrant box as per in
     $ python manage.py createsuperuser
     ## follow prompts to create username, password, email can be blank
 
-    ## run django app
+    ## run django app and bind to external IP address
 
-    $ python manage.py runserver
-
-    ## open second terminal window with second ssh connection to vagrant box
+    $ python manage.py runserver 0.0.0.0:4545
 
     ## to view admin page/browsable endpoints
 
-    $ firefox
-
-    ## in xquartz/firefox window load admin or desired endpoint site
+    ## open your browser in host machine
 
     ## for admin:
 
-    $ http://localhost:8000/admin
+    $ http://localhost:4546/admin
     ## login using superuser info
 
     ## for endpoints preview:
 
-    $ http://localhost:8000/'endpoint'
+    $ http://localhost:4546/'endpoint'
 
     ## ie:
 
-    $ http://localhost:8000/agencies
+    $ http://localhost:4546/agencies
+
 ## Existing API endpoints
 
-    '/incidents'
+    '/incidents' ** - Works, but with memory problems, see issue
     '/agencies'
     '/alarmlevels'
     '/censustracts'
-    '/fireblocks'
+    '/fireblocks' ** - Not working due to current issue
+
+## Pagination
