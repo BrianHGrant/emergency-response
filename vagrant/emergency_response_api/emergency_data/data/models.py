@@ -128,29 +128,6 @@ class Incident(models.Model):
         db_table = 'incident'
 
 
-class IncidentsIncidents(models.Model):
-    incident_id = models.IntegerField(primary_key=True)
-    runnumber = models.CharField(max_length=20)
-    fmarespcomp = models.CharField(max_length=6)
-    fireblock = models.CharField(max_length=6)
-    neighborassoc = models.CharField(max_length=18)
-    censustract = models.CharField(max_length=6)
-    quad = models.CharField(max_length=2)
-    streetname = models.CharField(max_length=30)
-    streettype = models.CharField(max_length=4)
-    quad2 = models.CharField(max_length=2)
-    streetname2 = models.CharField(max_length=30)
-    streettype2 = models.CharField(max_length=4)
-    county = models.CharField(max_length=30)
-    city = models.CharField(max_length=30)
-    state = models.CharField(max_length=2)
-    zip_code = models.CharField(max_length=9)
-
-    class Meta:
-        managed = False
-        db_table = 'incidents_incidents'
-
-
 class Incsitfound(models.Model):
     incsitfound_id = models.IntegerField(primary_key=True)
     incsitfoundsub_id = models.IntegerField()
