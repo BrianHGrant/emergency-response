@@ -65,10 +65,14 @@ The API is located with the vagrant folder. To access open vagrant box as per in
 
 ## Existing API endpoints
 
-    '/incidents' ** - Works, but with memory problems, see issue
+    '/incidents'
     '/agencies'
     '/alarmlevels'
     '/censustracts'
     '/fireblocks' ** - Not working due to current issue
 
 ## Pagination
+
+    '/incidents' pagination currently set to 10
+    ## To select page:
+    'http://localhost:4546/incidents?page=NUM'

@@ -1,16 +1,22 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from data.models import Incident, Agency, Alarmlevel, Censustract, Fireblock
-from data.serializers import IncidentSerializer, AgencySerializer, AlarmlevelSerializer, CensustractSerializer, FireblockSerializer
+from data.models import Incident, Agency, AlarmLevel, CensusTract, FireBlock
+from data.serializers import IncidentSerializer, AgencySerializer, AlarmLevelSerializer, CensusTractSerializer, FireBlockSerializer
+from rest_framework.pagination import PageNumberPagination
+
 
 @api_view(['GET'])
 def incident_list(request, format=None):
 
     if request.method == 'GET':
+        paginator = PageNumberPagination()
+        paginator.page_size = 10
         incidents = Incident.objects.all()
-        serializedIncidents = IncidentSerializer(incidents, many=True)
-        return Response(serializedIncidents.data)
+        result_page = paginator.paginate_queryset(incidents, request)
+        serializedIncidents = IncidentSerializer(result_page, many=True)
+        return paginator.get_paginated_response(serializedIncidents.data)
+
 
 @api_view(['GET'])
 def agency_list(request, format=None):
@@ -24,22 +30,22 @@ def agency_list(request, format=None):
 def alarmlevel_list(request, format=None):
 
     if request.method == 'GET':
-        alarmlevels = Alarmlevel.objects.all()
-        serializedAlarmlevel = AlarmlevelSerializer(alarmlevels, many=True)
-        return Response(serializedAlarmlevel.data)
+        alarmLevels = AlarmLevel.objects.all()
+        serializedAlarmLevel = AlarmLevelSerializer(alarmLevels, many=True)
+        return Response(serializedAlarmLevel.data)
 
 @api_view(['GET'])
 def censustract_list(request, format=None):
 
     if request.method == 'GET':
-        censustracts = Censustract.objects.all()
-        serializedCensustracts = CensustractSerializer(censustracts, many=True)
-        return Response(serializedCensustracts.data)
+        censusTracts = CensusTract.objects.all()
+        serializedCensusTracts = CensusTractSerializer(censusTracts, many=True)
+        return Response(serializedCensusTracts.data)
 
 @api_view(['GET'])
 def fireblock_list(request, format=None):
 
     if request.method == 'GET':
-        fireblocks = Fireblock.objects.all()
-        serializedFireblocks = FireblockSerializer(fireblocks, many=True)
-        return Response(serializedFireblocks.data)
+        fireBlocks = FireBlock.objects.all()
+        serializedFireBlocks = FireBlockSerializer(fireBlocks, many=True)
+        return Response(serializedFireBlocks.data)

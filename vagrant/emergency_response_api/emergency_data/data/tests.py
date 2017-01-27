@@ -10,5 +10,6 @@ class AgencyTests(APITestCase):
         """
         Ensure we can get a agency object
         """
-        response = self.client.get('agencies/4/')
-        self.assertEqual(response.data, {'id': 4})
+
+        response = self.client.get('agencies/1')
+        self.assertEqual(response.data, {'id': 1})

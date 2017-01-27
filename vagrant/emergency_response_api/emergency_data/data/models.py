@@ -20,7 +20,7 @@ class Agency(models.Model):
         db_table = 'agency'
 
 
-class Alarmlevel(models.Model):
+class AlarmLevel(models.Model):
     alarmlevel_id = models.IntegerField(primary_key=True)
     description = models.CharField(max_length=50, blank=True, null=True)
     id_911 = models.CharField(max_length=1, blank=True, null=True)
@@ -29,7 +29,7 @@ class Alarmlevel(models.Model):
         managed = False
         db_table = 'alarmlevel'
 
-class Censustract(models.Model):
+class CensusTract(models.Model):
     gid = models.AutoField(primary_key=True)
     statefp = models.CharField(max_length=2, blank=True, null=True)
     countyfp = models.CharField(max_length=3, blank=True, null=True)
@@ -49,7 +49,7 @@ class Censustract(models.Model):
         managed = False
         db_table = 'censustract'
 
-class Fireblock(models.Model):
+class FireBlock(models.Model):
     gid = models.AutoField(primary_key=True)
     objectid_1 = models.DecimalField(max_digits=10, decimal_places=0, blank=True, null=True)
     objectid = models.DecimalField(max_digits=10, decimal_places=0, blank=True, null=True)
@@ -71,7 +71,7 @@ class Fireblock(models.Model):
         db_table = 'fireblock'
 
 
-class Firestation(models.Model):
+class FireStation(models.Model):
     gid = models.AutoField(primary_key=True)
     objectid = models.DecimalField(max_digits=10, decimal_places=0, blank=True, null=True)
     station = models.CharField(max_length=6, blank=True, null=True)
@@ -85,7 +85,7 @@ class Firestation(models.Model):
         db_table = 'firestation'
 
 
-class Fma(models.Model):
+class FMA(models.Model):
     gid = models.AutoField(primary_key=True)
     objectid = models.DecimalField(max_digits=10, decimal_places=0, blank=True, null=True)
     fma = models.CharField(max_length=26, blank=True, null=True)
@@ -128,7 +128,7 @@ class Incident(models.Model):
         db_table = 'incident'
 
 
-class Incsitfound(models.Model):
+class IncsitFound(models.Model):
     incsitfound_id = models.IntegerField(primary_key=True)
     incsitfoundsub_id = models.IntegerField()
     description = models.CharField(max_length=50, blank=True, null=True)
@@ -142,7 +142,7 @@ class Incsitfound(models.Model):
         db_table = 'incsitfound'
 
 
-class Incsitfoundclass(models.Model):
+class IncsitFoundClass(models.Model):
     incsitfoundclass_id = models.IntegerField(primary_key=True)
     description = models.CharField(max_length=50, blank=True, null=True)
     sortorder = models.IntegerField(blank=True, null=True)
@@ -152,7 +152,7 @@ class Incsitfoundclass(models.Model):
         db_table = 'incsitfoundclass'
 
 
-class Incsitfoundsub(models.Model):
+class IncsitFoundSub(models.Model):
     incsitfoundsub_id = models.IntegerField(primary_key=True)
     incsitfoundclass_id = models.IntegerField()
     description = models.CharField(max_length=50, blank=True, null=True)
@@ -163,7 +163,7 @@ class Incsitfoundsub(models.Model):
         db_table = 'incsitfoundsub'
 
 
-class Inctimes(models.Model):
+class IncTimes(models.Model):
     inctimes_id = models.IntegerField(primary_key=True)
     timedesc_id = models.IntegerField()
     incident_id = models.IntegerField()
@@ -175,7 +175,7 @@ class Inctimes(models.Model):
         db_table = 'inctimes'
 
 
-class Mutualaid(models.Model):
+class MutualAid(models.Model):
     mutualaid_id = models.IntegerField(primary_key=True)
     description = models.CharField(max_length=50, blank=True, null=True)
     inactive = models.IntegerField(blank=True, null=True)
@@ -198,7 +198,7 @@ class Responder(models.Model):
         unique_together = (('incident_id', 'responder_id'),)
 
 
-class Responderunit(models.Model):
+class ResponderUnit(models.Model):
     responderunit_id = models.IntegerField(primary_key=True)
     description = models.CharField(max_length=50, blank=True, null=True)
     id_911 = models.CharField(max_length=6, blank=True, null=True)
@@ -213,7 +213,7 @@ class Responderunit(models.Model):
         db_table = 'responderunit'
 
 
-class Situationfound(models.Model):
+class SituationFound(models.Model):
     situationfound_id = models.IntegerField(primary_key=True)
     description = models.CharField(max_length=50, blank=True, null=True)
     review = models.IntegerField(blank=True, null=True)
@@ -247,7 +247,7 @@ class Station(models.Model):
         db_table = 'station'
 
 
-class Timedesc(models.Model):
+class TimeDesc(models.Model):
     timedesc_id = models.IntegerField(primary_key=True)
     description = models.CharField(max_length=50, blank=True, null=True)
     id_911 = models.CharField(max_length=6, blank=True, null=True)
@@ -257,7 +257,7 @@ class Timedesc(models.Model):
         db_table = 'timedesc'
 
 
-class Typenaturecode(models.Model):
+class TypeNatureCode(models.Model):
     typenaturecode_id = models.IntegerField(primary_key=True)
     description = models.CharField(max_length=50, blank=True, null=True)
     id_911 = models.CharField(max_length=8, blank=True, null=True)

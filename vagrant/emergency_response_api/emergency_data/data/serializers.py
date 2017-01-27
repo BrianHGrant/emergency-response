@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from data.models import Incident, Agency, Alarmlevel, Censustract, Fireblock
+from data.models import Incident, Agency, AlarmLevel, CensusTract, FireBlock
 
 class IncidentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,17 +11,17 @@ class AgencySerializer(serializers.ModelSerializer):
         model = Agency
         fields = ('agency_id', 'description', 'statecode')
 
-class AlarmlevelSerializer(serializers.ModelSerializer):
+class AlarmLevelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Alarmlevel
+        model = AlarmLevel
         fields = ('alarmlevel_id', 'description', 'id_911')
 
-class CensustractSerializer(serializers.ModelSerializer):
+class CensusTractSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Censustract
+        model = CensusTract
         fields = ('gid', 'statefp', 'countyfp', 'tractce', 'blkgrpce', 'geoid', 'namelsad', 'mtfcc', 'funcstat', 'aland', 'awater', 'intptlat', 'intptlon', 'geom')
 
-class FireblockSerializer(serializers.ModelSerializer):
+class FireBlockSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Fireblock
+        model = FireBlock
         fields = ('gid', 'objectid_1', 'objectid', 'fma', 'resp_zone', 'jurisdict', 'dist_grp', 'notes', 'of_fma', 'mv_label', 'shape_star', 'shape_stle', 'shape_leng', 'shape_area', 'geom')
