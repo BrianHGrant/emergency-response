@@ -50,6 +50,9 @@ apt-get autoremove - &> $LOGFILE
 echo 'Installing csvkit...'
 pip install csvkit &> $LOGFILE         # for commands 'csvsql' and 'csvstat'
 
+#install docker-compose
+
+sudo pip install docker-compose
 
 # run secondary script as user vagrant
 

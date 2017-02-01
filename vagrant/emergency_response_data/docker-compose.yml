@@ -1,0 +1,11 @@
+db:
+  image: postgres
+web:
+  build: .
+  command: gunicorn emergency_response_api.wsgi:application -b :4545
+  volumes:
+    - .:/code
+  ports:
+    - "4545:4545"
+  links:
+    - db
