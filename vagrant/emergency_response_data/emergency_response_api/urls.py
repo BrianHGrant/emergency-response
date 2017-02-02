@@ -1,7 +1,7 @@
-"""emergency_response_api URL Configuration
+"""emergency_data URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.9/topics/http/urls/
+    https://docs.djangoproject.com/en/1.10/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,7 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from rest_framework.urlpatterns import format_suffix_patterns
+from data import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^incidents$', views.incident_list),
+    url(r'^agencies$', views.agency_list),
+    url(r'^alarmlevels$', views.alarmlevel_list),
+    url(r'^censustracts$', views.censustract_list),
+    url(r'^fireblocks$', views.fireblock_list),
+    url(r'^typenaturecodes$', views.typenaturecode_list),
+    url(r'^stations$', views.station_list),
+
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
