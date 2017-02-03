@@ -52,6 +52,7 @@ pip install csvkit &> $LOGFILE         # for commands 'csvsql' and 'csvstat'
 
 #install docker-compose
 
+sudo pip install urllib3[secure]
 sudo pip install docker-compose
 
 # run secondary script as user vagrant

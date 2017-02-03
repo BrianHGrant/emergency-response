@@ -1,5 +1,3 @@
-db:
-  image: postgres
 web:
   build: .
   command: gunicorn emergency_response_api.wsgi:application -b :4545
@@ -9,3 +7,5 @@ web:
     - "4545:4545"
   links:
     - db
+db:
+  image: postgres
