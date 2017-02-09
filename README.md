@@ -74,20 +74,20 @@ To run the API for the first time:
 
 ## Existing API endpoints
 
-"agencies": "http://localhost:8000/agencies/",
-"alarmlevels": "http://localhost:8000/alarmlevels/",
-"censustracts": "http://localhost:8000/censustracts/",
-"fireblocks": "http://localhost:8000/fireblocks/",
-"typenaturecodes": "http://localhost:8000/typenaturecodes/",
-"stations": "http://localhost:8000/stations/",
-"firestations": "http://localhost:8000/firestations/",
-"fmas": "http://localhost:8000/fmas/",
-"mutualaid": "http://localhost:8000/mutualaid/",
-"responderunits": "http://localhost:8000/responderunits/",
-"incsitfoundclass": "http://localhost:8000/incsitfoundclass/",
-"incsitfoundsub": "http://localhost:8000/incsitfoundsub/",
-"incsitfound": "http://localhost:8000/incsitfound/",
-"incidents": "http://localhost:8000/incidents/"
+    "agencies": "http://localhost:8000/agencies/",  
+    "alarmlevels": "http://localhost:8000/alarmlevels/",  
+    "censustracts": "http://localhost:8000/censustracts/",  
+    "fireblocks": "http://localhost:8000/fireblocks/",  
+    "typenaturecodes": "http://localhost:8000/typenaturecodes/",  
+    "stations": "http://localhost:8000/stations/",  
+    "firestations": "http://localhost:8000/firestations/",  
+    "fmas": "http://localhost:8000/fmas/",  
+    "mutualaid": "http://localhost:8000/mutualaid/",  
+    "responderunits": "http://localhost:8000/responderunits/",  
+    "incsitfoundclass": "http://localhost:8000/incsitfoundclass/",  
+    "incsitfoundsub": "http://localhost:8000/incsitfoundsub/",  
+    "incsitfound": "http://localhost:8000/incsitfound/",  
+    "incidents": "http://localhost:8000/incidents/"  
 
 ## Pagination
 
