@@ -29,8 +29,8 @@ To run the API for the first time:
       $ docker-compose up
   3. Allow process to run, will take a few minutes the first time as it needs to build the fresh image.
   4. When completed you most likely will be confronted with an error about unable to find or connect to database.
-  5. CTRL-C to stop the docker container.
-  6. To configure postgres user and database and load data run the following commands in order:  
+  5. Open a second terminal window in same directory.
+  6. While keeping container running, Configure postgres user, database and load the data by running the following commands in order:  
 
         ## this command will create the eruser  
 
