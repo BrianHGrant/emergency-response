@@ -7,18 +7,9 @@ Before running, you must download the [fire_db_2010](https://drive.google.com/fi
 
 Save it to postgresql/data/ (will need to create folder) within this repo.
 
-## DB Info:
-to log into the DB use:
+## Docker
 
-DB name: fire
-
-username: eruser
-
-password: fire
-
-
-_BUT_ I set it up so you don't have to enter the password, just hit 'ok' if you are asked for a password in pgadmin.
-
+This API is built using Docker containers. It will be easiest to run using [Docker](https://docs.docker.com/) including Docker-Compose and following steps below. If you would like to run natively see these [steps](#native). Any development work should be made with Docker.
 
 ## To Setup:
 
@@ -94,3 +85,39 @@ To run the API for the first time:
     '/incidents' pagination currently set to 10
     ## To select page:
     'http://localhost:4546/incidents?page=NUM'
+
+## DB Info:
+to log into the DB use:
+
+DB name: fire  
+username: eruser  
+password: fire  
+
+_BUT_ I set it up so you don't have to enter the password, just hit 'ok' if you are asked for a password in pgadmin.
+
+## Native
+
+Provided the correct dependencies and versions are installed one should be able to run api outside of Docker.  
+
+To Run:
+
+  1. You will still need to download and save the dumpfile as directed.
+  2. Setup the database, user, and import the data. Commands should be similar to above, removing docker syntax and using your postgres admin account:
+
+      ie:
+
+      $ createuser eruser --username=<YOUR-USERNAME>  
+      $ createdb fire --username=<YOUR-USERNAME>  
+      $ psql --username=<YOUR-USERNAME> fire < postgresql/data/fire_db_2010  
+
+      * You will get some errors unless you have a user named postgres. This should not effect the usability of the api.  
+
+  3. Alter /emergency_response_api/emergency_response_api/settings.py to have correct postgres hostname, most likely change 'db' to 'localhost'
+
+  4. Migrate the database:
+
+      $ python manage.py migrate  
+
+  5. Run the server:
+
+      $ gunicorn emergency_response_api.wsgi:application -b :8000  
