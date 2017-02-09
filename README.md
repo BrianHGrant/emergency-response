@@ -106,9 +106,9 @@ To Run:
 
       ie:
 
-      $ createuser eruser --username=<YOUR-USERNAME>  
-      $ createdb fire --username=<YOUR-USERNAME>  
-      $ psql --username=<YOUR-USERNAME> fire < postgresql/data/fire_db_2010  
+      $ createuser eruser --username=<YOURNAME>  
+      $ createdb fire --username=<YOURNAME>  
+      $ psql --username=<YOURNAME> fire < postgresql/data/fire_db_2010  
 
       * You will get some errors unless you have a user named postgres. This should not effect the usability of the api.  
 
